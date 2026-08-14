@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+  个人主页 index.html
+  这是整个网页的"骨架"，所有文字内容都在这里。
+  从上到下阅读，每个标签都有注释解释它在干什么。
+  想改内容：直接改标签里的文字。
+-->
+<html lang="zh-CN">
+<head>
+    <!-- 页面的"元信息"，不直接显示在页面上，但浏览器靠它工作 -->
+    <meta charset="UTF-8">  <!-- 告诉浏览器用 UTF-8 编码，中文才不会乱码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ↑ 让页面在手机上自动适配，没有这行手机看会变形 -->
+    <title>席浩田 | 个人主页</title>
+    <!-- 浏览器标签页上显示的文字 -->
+
+    <!-- 引入样式文件 style.css，页面的"长相"都在那个文件里 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ 导航栏：页面顶部的菜单，点击可跳转到对应区域 ============ -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <!-- 左边是名字，点击回到顶部 -->
+            <a href="#home" class="nav-brand">席浩田</a>
+            <!-- 右边是菜单项，href="#xxx" 对应下面各区域的 id -->
+            <div class="nav-links">
+                <a href="#about">关于</a>
+                <a href="#skills">技能</a>
+                <a href="#projects">项目</a>
+                <a href="#experience">经历</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ Hero 区：打开页面第一眼看到的大标题区 ============ -->
+    <header id="home" class="hero">
+        <!-- 头像占位：以后放你的照片，把 img 标签换成 <img src="你的照片.jpg" alt="头像"> 即可 -->
+        <div class="avatar">席</div>
+        <h1>席浩田</h1>
+        <!-- 一句话定位：改这里就是改你的"名片" -->
+        <p class="tagline">通信工程大三学生 · 方向 ICT 网络优化与 AI+通信交叉</p>
+        <p class="hero-sub">西华大学 · 2027 届 · 正在学习成为更好的工程师</p>
+    </header>
+
+    <!-- ============ 关于我 ============ -->
+    <section id="about" class="section">
+        <h2>关于我</h2>
+        <div class="card">
+            <p>西华大学通信工程专业本科生，预计 2027 年毕业。主修通信原理、无线通信、光纤通信、数据与计算机通信等课程。</p>
+            <p>2026 年暑期通过强基计划进入重庆中邮信科集团设备商 BG 实习，接触了从基站射频测试到 AI 应用的完整链路，明确了自己的方向：ICT 网络优化与 AI+通信交叉。</p>
+        </div>
+    </section>
+
+    <!-- ============ 技能 ============ -->
+    <section id="skills" class="section">
+        <h2>技能</h2>
+        <!-- 每一条技能是一张小卡片，想加技能就复制一个 <div class="skill-card"> 块 -->
+        <div class="skill-grid">
+            <div class="skill-card">
+                <h3>通信网络</h3>
+                <p>PHU 测试、SSV 单站验证、Cisco Packet Tracer 组网</p>
+            </div>
+            <div class="skill-card">
+                <h3>嵌入式</h3>
+                <p>STM32、Keil5、C 语言</p>
+            </div>
+            <div class="skill-card">
+                <h3>信号处理</h3>
+                <p>MATLAB 通信系统仿真与数据分析</p>
+            </div>
+            <div class="skill-card">
+                <h3>AI 应用</h3>
+                <p>RAG 知识库、ChromaDB、Gradio、AI Agent 工具链</p>
+            </div>
+            <div class="skill-card">
+                <h3>编程</h3>
+                <p>Python、HTML/CSS（学习中）</p>
+            </div>
+            <div class="skill-card">
+                <h3>办公与协作</h3>
+                <p>WPS、文档编写、汇报展示</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 项目 ============ -->
+    <section id="projects" class="section">
+        <h2>项目</h2>
+        <!-- 三个课程设计。等你在 GitHub 上建好对应仓库后，把 href="#" 换成仓库链接 -->
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>基于 RAG 的垂直领域知识库问答系统</h3>
+                <p>以 Qoard Work 为核心开发，结合百炼 API 与 AutoDL 云算力平台。实现文档语义切片、向量化、ChromaDB 持久化、语义+BM25 混合检索与 RRF 融合排序，集成千问大模型增强回答，Gradio 多模型对比前端。</p>
+                <!-- href 里放真实网址才能跳转。现在先放你的 GitHub 主页做演示，
+                     等 RAG 项目仓库建好后，换成 https://github.com/yifeng318/仓库名 -->
+                <a href="https://github.com/yifeng318" target="_blank" class="project-link">查看代码 →</a>
+            </div>
+            <div class="project-card">
+                <h3>企业办公网络规划设计</h3>
+                <p>为 1000 台 PC、7 个部门、3 个跨省分公司设计办公网络。三层架构 + VLAN 隔离 + IPSec VPN 互联 + DMZ 安全区 + NAT/PAT 上网，编制约 85 万元工程预算，Packet Tracer 完整拓扑。</p>
+                <a href="#" class="project-link">查看代码 →</a>
+            </div>
+            <div class="project-card">
+                <h3>基于 STM32F103C8T6 的病护呼叫清除系统</h3>
+                <p>Tina 仿真设计数字电路，Keil5 编写 C 语言逻辑，下载至单片机调试，完成串口通信验证，走通完整嵌入式开发流程。</p>
+                <a href="#" class="project-link">查看代码 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 经历 ============ -->
+    <section id="experience" class="section">
+        <h2>经历</h2>
+        <div class="card">
+            <h3>重庆中邮信科集团 · 强基计划实习生（设备商 BG-资源中心）</h3>
+            <p class="muted">2026.07 – 2026.08</p>
+            <ul>
+                <li>掌握单站验证（SSV）流程及 PHU 软件操作规范</li>
+                <li>独立完成基站天线定点测试与路测，采集分析 RSRP/SINR/切换成功率/吞吐量等射频指标</li>
+                <li>基于 Qoard Work 开发面向运维场景的 RAG 知识库问答系统</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>校园经历</h3>
+            <ul>
+                <li>西华杯乒乓球赛：负责系队赛事组织、赛程安排与人员调度</li>
+                <li>四点半课堂志愿教师：为社区儿童讲授科普知识，累计服务 40+ 小时</li>
+                <li>大型志愿活动：负责物资协调与后台保障</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ 联系（页脚） ============ -->
+    <footer id="contact" class="footer">
+        <h2>联系我</h2>
+        <p>
+            <!-- 你的 GitHub 主页链接，改 href 里的地址即可 -->
+            <a href="https://github.com/yifeng318" target="_blank">GitHub: github.com/yifeng318</a>
+        </p>
+        <p><a href="mailto:2084374742@qq.com">邮箱: 2084374742@qq.com</a></p>
+        <!-- mailto: 是邮箱链接，点击会打开发邮件窗口 -->
+        <p class="muted small">© 2026 席浩田 · 用 HTML/CSS 手写</p>
+    </footer>
+
+</body>
+</html>
